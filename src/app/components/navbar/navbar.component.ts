@@ -2,10 +2,17 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+  menuIcon: string = 'menu';
+  
+  toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+      navLinks.classList.toggle('top-[9%]');
+      this.menuIcon = this.menuIcon === 'menu' ? 'close' : 'menu';
+    }
+  }
 }
